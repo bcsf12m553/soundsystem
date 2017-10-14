@@ -1,0 +1,138 @@
+﻿
+@using SOUND_SYSTEM.Model
+
+
+
+
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/css/prettyPhoto.css" rel="stylesheet">
+    <link href="~/css/price-range.css" rel="stylesheet">
+    <link href="~/css/animate.css" rel="stylesheet">
+	<link href="~/css/main.css" rel="stylesheet">
+    	<link href="~/css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="~/js/html5shiv.js"></script>
+    <script src="~/js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+
+<table class="table table-condensed">
+					<thead>
+						<tr class="cart_menu">
+							<td class="image">Item</td>
+							<td class="description"></td>
+							<td class="price">Price</td>
+							<td class="quantity">Quantity</td>
+							<td class="total">Total</td>
+							<td></td>
+						</tr>
+					</thead>
+					<tbody>
+						
+
+
+
+                         
+
+                      
+
+                        <script>
+                            function setQuantity(upordown, itemp) {
+                                var quantity = document.getElementById(itemp);
+                                //document.getElementById('totalp').innerHTML = Date();
+
+
+                                if (quantity.value > 1) {
+                                    if (upordown == 'up') {
+                                        ++document.getElementById(itemp).value;
+
+
+                                    }
+                                    else if (upordown == 'down') { --document.getElementById(itemp).value; }
+
+
+                                }
+                                else if (quantity.value == 1) {
+                                    if (upordown == 'up') { ++document.getElementById(itemp).value; }
+                                }
+                                else { document.getElementById(itemp).value = 1; }
+
+                            }
+
+
+                            function displayDate(price, quan, pid) {
+
+
+
+
+
+                                document.getElementById(price).innerHTML = price * document.getElementById(pid).value;
+
+                            }
+
+
+                        </script>
+
+                        	
+   
+
+                        
+                      
+
+
+
+                        
+                         
+                        @foreach(Product item in (List<Product>)Session["cart"])
+                        {
+                            
+                            
+                            
+                        <tr >
+							<td class="cart_product">
+								<a href="#"><img src="@("/images/home/"+@item.Product_id+".jpg" )" alt=""  height="60" width="60" ></a>
+							</td>
+							<td class="cart_description">
+								<h4><a href="#">@item.Name</a></h4>
+								@Session["abc"]
+							</td>
+							<td class="cart_price">
+								<p>@item.Price</p>
+							</td>
+							<td class="cart_quantity">
+								<div class="cart_quantity_button">
+                                    <a class="cart_quantity_up" id="up" onclick="setQuantity('up',@item.Product_id)" href="#"> + </a>
+									<input class="cart_quantity_input" type="text" id="@item.Product_id" name="@item.Product_id" value="@Session[item.Name]" autocomplete="off" size="2">
+									 <a class="cart_quantity_down" id="down" onclick="setQuantity('down',@item.Product_id)" href="#"> - </a>
+								</div>
+							</td>
+							
+                            
+                            <td class="cart_total">
+                                <p class="cart_total_price" id="@item.Price" onclick="displayDate(@item.Price,@Session[item.Name],@item.Product_id)" href="#" >12</p>
+							</td>
+							<td class="cart_delete">
+								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+							</td>
+						</tr>
+
+                            
+
+                            
+                              
+                            
+                            
+                            
+						}
+                        
+                        
+                       
+
+
+					</tbody>
+				</table>

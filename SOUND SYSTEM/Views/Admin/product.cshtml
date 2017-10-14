@@ -1,0 +1,202 @@
+﻿
+
+
+@model IEnumerable<SOUND_SYSTEM.Model.Product>
+
+
+
+
+ 
+        <div id="chain" class="col-xs-12">
+        
+            <div>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();">Add New Product</button>
+
+             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="loadpartialview();">Update Panel</button>
+                </div>
+               <br />
+<div class="box" >
+
+
+
+
+<div class="box-body" id="bata">
+
+
+
+<table id="example1" class="table table-bordered table-striped" role="grid">
+    <thead>
+        <tr >
+        <th  class="sorting_desc">
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Qty)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th></th>
+   </tr>
+        </thead>
+
+    <tbody>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Qty)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.Category)
+        </td>
+        <td>
+           
+            
+            <button type="button" class="btn btn-info btn-sm" onclick="getbyID(@item.Product_id)" >Edit</button> 
+            <button type="button" class="btn btn-info btn-sm" onclick="Del(@item.Product_id)" >Delete</button>
+            
+             
+        </td>
+    </tr>
+}
+    </tbody>
+
+</table>
+    </div>
+
+</div>
+
+            
+
+
+
+ 
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          @*<button type="button" class="close" data-dissmiss="modal"><span aria-hidden="true">×</span></button>*@
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+          <h4 class="modal-title">Edit Product</h4>
+        </div>
+        <div class="modal-body">
+          
+
+
+            <form id="form" action="/Admin/addproduct"  enctype="multipart/form-data"  method="post">
+                      
+                      
+                       <div class="form-group">
+                      
+                        <label for="Name">Product Name :</label> 
+                        <input name="Name" class="form-control" id="Name" type="text"  tabindex="1" />
+                        
+                            </div>
+
+                <div class="form-group">
+                         <label for="Product_id">Product Model :</label> 
+                        <input name="Product_id" class="form-control" id="Product_id" type="text"  />
+                        
+                    </div>
+
+                <div class="form-group">
+                        <label for="Price">Enter Price :
+                        </label>
+                        <input name="Price" class="form-control" id="Price" type="text"  
+                        tabindex="2" />
+                      
+                    
+                     </div>
+
+
+                <div class="form-group">
+                        <label for="Qty">Enter Quantity :</label>
+                        <input name="Qty" class=form-control id="Qty" type="text" 
+                        tabindex="2" />
+                      </div>
+                      
+                      <div class="form-group">
+                        <label for="pass">Detail : </label>
+                        <textarea id="description" class="form-control" name="Description" style="width:500px;height:100px;" ></textarea>
+                     
+                        </div>
+                           <label for="category">Select Category : </label>
+                       
+                      
+                       
+                         <div class="form-goup"> 
+
+                              <select id="category"  "form-control" name="category">
+                
+                            
+                                    @foreach (SOUND_SYSTEM.Model.Category obj  in (List<SOUND_SYSTEM.Model.Category>)Session["category"])
+                                    {
+                                   <option  label="@obj.Name" value="@obj.Name">@obj.Name
+                            </option>
+                                    }
+                         
+                         
+                        </select>
+                </div> 
+        
+                <div class="form-group">  
+                    
+                       <label for="File" >Upload Photos : </label>             
+      <input type="file" class="form-control" id="File" name="File" " multiple/>
+ 
+                </div> 
+
+
+
+                 
+               
+
+                 
+                          
+                        </form>
+
+
+        </div>
+         <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnAdd" onclick="Add()">Add</button>
+                     
+
+                    <button type="button" class="btn btn-primary" id="btnUpdate" style="display:none;" onclick="Update();">Update</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+      </div>
+      
+    </div>
+  </div>
+            
+            
+            
+            
+            
+            
+            
+        
+
+            </div>
+
+
+    

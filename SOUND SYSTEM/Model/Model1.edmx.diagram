@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="316b4b3417154cd2846aa157871b1edb" Name="Diagram1" ZoomLevel="80">
+        <EntityTypeShape EntityType="soundsystemModel.Category" Width="1.625" PointX="0.5" PointY="1.25" IsExpanded="true" FillColor="0, 0, 192" />
+        <EntityTypeShape EntityType="soundsystemModel.Product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="soundsystemModel.userdata" Width="1.5" PointX="7.25" PointY="1.5" IsExpanded="true" />
+        <AssociationConnector Association="soundsystemModel.FK_Product_Product" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="soundsystemModel.customer" Width="1.5" PointX="5" PointY="1.5" />
+        <EntityTypeShape EntityType="soundsystemModel.Order_Product" Width="1.5" PointX="3.625" PointY="5.25" />
+        <AssociationConnector Association="soundsystemModel.FK_Order_Product_Product" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

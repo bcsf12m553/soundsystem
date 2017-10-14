@@ -1,0 +1,256 @@
+﻿ 
+@model List<SOUND_SYSTEM.Model.customer>
+
+@using SOUND_SYSTEM.Model; 
+
+
+
+
+   <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Latest Orders</h3>
+
+             
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div class="table-responsive">
+                <table class="table no-margin">
+                  <thead>
+                  <tr>
+                    <th>Order ID</th>
+                    <th>Mobile</th>
+                    <th>City</th>
+                    <th>Name</th>
+                     <th>Status</th>
+                      <th></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                 
+                      
+                        @foreach (var i in Model)
+                        {
+                       <tr>
+                    <td ><button type="button" class="btn btn-link"  onclick="fillvalues(@i.orderno)">@i.orderno</button></td>
+                    <td>@i.mobile</td>
+                    
+                   
+                           <td>
+                     <a href="pages/examples/invoice.html">@i.city</a>
+                        
+                    </td>
+                     <td><a href="pages/examples/invoice.html">@i.fname  @i.sname</a>
+                    </td>
+                        
+                            <td><span class="label label-success">@i.status</span></td>
+                           <td><button type="button" class="btn btn-box-tool" data-widget="remove" onclick="deleteorder(@i.orderno)"><i class="fa fa-times"></i></button></td>
+                  </tr>
+                            
+                        
+                        }   
+                        
+                        
+                        
+                        
+                   
+
+
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.table-responsive -->
+            </div>
+            <!-- /.box-body -->
+   
+            <!-- /.box-footer -->
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="modal fade" id="myModal"style="min-width:800px;"  id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="min-width:800px;" >
+    
+      <!-- Modal content-->
+      <div class="modal-content" style="min-width:800px;">
+        <div class="modal-header" style="min-width:800px;">
+          @*<button type="button" class="close" data-dissmiss="modal"><span aria-hidden="true">×</span></button>*@
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+          <h4 class="modal-title">Edit Product</h4>
+        </div>
+        <div class="modal-body" style="min-width:800px;">
+          
+
+               <section class="invoice">
+      <!-- title row -->
+      <div class="row">
+        <div class="col-xs-12">
+          <hll2 class="page-header">
+            <i class="fa fa-globe"></i> AdminLTE, Inc.
+            <small class="pull-right">Date: 2/10/2014</small>
+          </hll2>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- info row -->
+      <div class="row invoice-info">
+        <div class="col-sm-4 invoice-col" style="width:40%">
+          Customer Detail:
+          <address id="name">
+            <strong>Admin, Inc.</strong><br>
+            795 Folsom Ave, Suite 600<br>
+            San Francisco, CA 94107<br>
+            Phone: (804) 123-5432<br>
+            Email: info@almasaeedstudio.com
+          </address>
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-4 invoice-col">
+         
+          <address>
+           
+          </address>
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-4 invoice-col">
+            <h4>Order ID:</h4>
+            <p id="order"></p><br>
+          
+          <h4>Order Status: </h4>  
+          <p id="pstatus"></p>
+        
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+      <!-- Table row -->
+      <div class="row">
+        <div class="col-xs-12 table-responsive">
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th>Qty</th>
+              <th>Product</th>
+                <th>Unit Price</th>
+              <th>Total Price</th>
+            </tr>
+            </thead>
+            <tbody>
+          
+                @if(@ViewBag.name !=null)
+                {
+                foreach(Order_Product  item in (List<SOUND_SYSTEM.Model.Order_Product>)ViewBag.name)
+                {
+                <tr>
+              <td>@item.Quanitiy</td>
+              <td>@item.Name</td>
+               <td>@item.unitprice</td>
+              <td>@(item.unitprice*item.Quanitiy)</td>
+              
+            </tr>
+                }
+                }
+           
+            </tbody>
+          </table>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+      <div class="row" >
+        <!-- accepted payments column -->
+        <div class="col-xs-6"  >
+          <p class="lead">Status Update:</p>
+         
+             <select id="status">
+
+                                      
+                                   <option >Pending</option>
+                                   <option>Order Verified</option>
+                                   <option>Dispached</option>
+                                    <option>Order delivered</option>   
+
+                                       
+
+
+
+                                </select>
+          <p class="text-muted well well-sm no-shadow" style="margin-top: 10px;">
+            <textarea> 
+                </textarea>
+          </p>
+        </div>
+        <!-- /.col -->
+        <div class="col-xs-6">
+          <p class="lead">Amount Due 2/22/2014</p>
+
+          <div class="table-responsive">
+            <table class="table">
+              <tr>
+                <th style="width:50%">Subtotal:</th>
+                <td>RS @Session["ptotal"] </td>
+              </tr>
+              <tr>
+                <th>Tax (0%)</th>
+                <td>RS 0</td>
+              </tr>
+              <tr>
+                <th>Shipping:</th>
+                <td>RS 200</td>
+              </tr>
+              <tr>
+                <th>Total:</th>
+                <td>RS @((int)Session["ptotal"]+200)</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+      <!-- this row will not appear when printing -->
+      <div class="row no-print">
+        <div class="col-xs-12">
+          <Button class="btn btn-default" onclick="updatestatus()"> Update</Button>
+          <button type="button" class="btn btn-success pull-right"><i class="fa fa-credit-card"></i> Submit Payment
+          </button>
+          <button type="button" class="btn btn-primary pull-right" style="margin-right: 5px;">
+            <i class="fa fa-download"></i> Generate PDF
+          </button>
+        </div>
+      </div>
+    </section>
+          
+
+
+        </div>
+         <div class="modal-footer">
+                   
+                    <button type="button" class="btn btn-primary" id="btnUpdate" style="display:none;" onclick="Update();">Update</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
+                </div>
+      </div>
+      
+    </div>
+  </div>
+            
