@@ -154,15 +154,36 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Content Include="bower_components\bootstrap\dist\css\bootstrap-theme.css" />
-    <Content Include="bower_components\bootstrap\dist\css\bootstrap-theme.min.css" />
-    <Content Include="bower_components\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\EntityFramework.xml" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\SOUND SYSTEM.dll" />
+    <Content Include="bin\SOUND SYSTEM.pdb" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Helpers.xml" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Mvc.xml" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.xml" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.xml" />
     <Content Include="bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="bower_components\bootstrap\dist\js\bootstrap.js" />
     <Content Include="bower_components\bootstrap\dist\js\npm.js" />
@@ -1670,10 +1691,69 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="img\bg.jpg" />
+    <Content Include="img\bg_blue.jpg" />
+    <Content Include="img\bg_brown.jpg" />
+    <Content Include="img\bg_light_green.jpg" />
+    <Content Include="img\bg_menu_blue.jpg" />
+    <Content Include="img\bg_menu_green.jpg" />
+    <Content Include="img\bg_menu_mix.jpg" />
+    <Content Include="img\bg_menu_red.jpg" />
+    <Content Include="img\bg_mix.jpg" />
+    <Content Include="img\form_blue.gif" />
+    <Content Include="img\form_brown.gif" />
+    <Content Include="img\form_green.gif" />
+    <Content Include="img\form_mix.gif" />
+    <Content Include="img\form_red.gif" />
+    <Content Include="img\graph.jpg" />
+    <Content Include="img\graph2.jpg" />
+    <Content Include="img\icons\add.png" />
+    <Content Include="img\icons\application_add.png" />
+    <Content Include="img\icons\arrow_down.png" />
+    <Content Include="img\icons\arrow_down_mini.gif" />
+    <Content Include="img\icons\arrow_left.gif" />
+    <Content Include="img\icons\arrow_right.gif" />
+    <Content Include="img\icons\brick.png" />
+    <Content Include="img\icons\bricks.png" />
+    <Content Include="img\icons\bricks_gear.png" />
+    <Content Include="img\icons\brick_edit.png" />
+    <Content Include="img\icons\car.png" />
+    <Content Include="img\icons\cart.png" />
+    <Content Include="img\icons\cart_add.png" />
+    <Content Include="img\icons\cog.png" />
+    <Content Include="img\icons\coins.png" />
+    <Content Include="img\icons\color_swatch.png" />
+    <Content Include="img\icons\expand.jpg" />
+    <Content Include="img\icons\feed.png" />
+    <Content Include="img\icons\folder.png" />
+    <Content Include="img\icons\folder_page.png" />
+    <Content Include="img\icons\folder_page_add.png" />
+    <Content Include="img\icons\folder_table.png" />
+    <Content Include="img\icons\group.png" />
+    <Content Include="img\icons\house.png" />
+    <Content Include="img\icons\magnifier.png" />
+    <Content Include="img\icons\page_add.png" />
+    <Content Include="img\icons\page_gear.png" />
+    <Content Include="img\icons\page_white_delete.png" />
+    <Content Include="img\icons\page_white_edit.png" />
+    <Content Include="img\icons\page_white_link.png" />
+    <Content Include="img\icons\page_white_text_width.png" />
+    <Content Include="img\icons\report.png" />
+    <Content Include="img\icons\report_link.png" />
+    <Content Include="img\icons\rss.png" />
+    <Content Include="img\icons\user.png" />
+    <Content Include="img\icons\user_add.png" />
+    <Content Include="img\icons\user_delete.png" />
+    <Content Include="img\icons\user_edit.png" />
+    <Content Include="img\icons\world.png" />
     <Content Include="js\jquery-1.8.2.min.js" />
     <Content Include="js\jquery.prettyPhoto.js" />
     <Content Include="js\jquery.unobtrusive-ajax.min.js" />
     <Content Include="js\product_detail.js" />
+    <Content Include="obj\Debug\SOUND SYSTEM.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\SOUND SYSTEM.dll" />
+    <Content Include="obj\Debug\SOUND SYSTEM.pdb" />
+    <Content Include="Properties\PublishProfiles\soundsystemrelaese.pubxml.user" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1691,6 +1771,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="bower_components\bootstrap\dist\css\" />
     <Folder Include="bower_components\datatables.net-bs\css\" />
     <Folder Include="bower_components\fastclick\lib\" />
     <Folder Include="bower_components\font-awesome\css\" />
@@ -1776,10 +1857,6 @@
     <Content Include="bower_components\bootstrap\.bower.json" />
     <Content Include="bower_components\bootstrap\bower.json" />
     <Content Include="bower_components\bootstrap\CHANGELOG.md" />
-    <Content Include="bower_components\bootstrap\dist\css\bootstrap-theme.css.map" />
-    <Content Include="bower_components\bootstrap\dist\css\bootstrap-theme.min.css.map" />
-    <Content Include="bower_components\bootstrap\dist\css\bootstrap.css.map" />
-    <Content Include="bower_components\bootstrap\dist\css\bootstrap.min.css.map" />
     <Content Include="bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
@@ -1907,6 +1984,14 @@
   <ItemGroup>
     <Content Include="dist\css\adminlte.css.map" />
     <Content Include="dist\css\adminlte.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\Model\Model1.csdl" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\Model\Model1.msl" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\Model\Model1.ssdl" />
+    <Content Include="obj\Debug\SOUND SYSTEM.csprojResolveAssemblyReference.cache" />
+    <None Include="Properties\PublishProfiles\soundsystemrelaese.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
